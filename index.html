@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            gap: 5rem;
+            background-color: #f4f4f4;
+            
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+            max-width: 100%;
+            -webkit-box-shadow: 9px 10px 10px -4px rgba(51, 50, 50, 0.363);
+            -moz-box-shadow: 9px 10px 10px -4px rgba(51, 50, 50, 0.363);
+            box-shadow: 9px 10px 10px -4px rgba(51, 50, 50, 0.363);
+        }
+
+        .header__image {
+            width: 100%;
+            max-width: 550px;
+            height: auto;
+            mask-image: radial-gradient(circle, rgb(0, 0, 0) 65%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        .header__nav {
+            margin: 20px 0;
+        }
+
+        .header__description {
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            gap: 5rem;
+            justify-content: space-evenly;
+        }
+
+        .headernav__list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .navlist__item {
+            margin: 0 10px;
+        }
+
+        .navlist__item a {
+            text-decoration: none;
+            font-size: larger;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .header__text {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .header__text h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #333;
+        }
+
+        .container h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 0;
+            color: #333;
+        }
+
+        .description {
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            gap: 5rem;
+            justify-content: space-evenly;
+        }
+
+
+        .section__text {
+            display: flex;
+            flex-direction: column;
+            max-width: 60%;
+            line-height: 2;
+        }
+
+        .experience__image {
+            width: 100%;
+            max-width: 100px;
+            height: auto;
+
+        }
+
+        .experience__description {
+            display: flex;
+            align-items: center;
+
+            gap: 5rem;
+            justify-content: space-evenly;
+        }
+
+
+        .experience__text {
+            display: flex;
+            flex-direction: column;
+            max-width: 60%;
+            line-height: 2;
+        }
+
+        .services__container {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
+        .section__services {
+            display: flex;
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        h1 {
+            text-align: center;
+
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        /* Cuando el elemento entra en pantalla */
+        .reveal:has(> *):is(:nth-child(n)) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            animation: fadeIn ease-out both;
+            animation-timeline: view();
+            animation-range: entry 20% cover 50%;
+        }
+    </style>
+</head>
+<header class="reveal">
+    <div class="container">
+        <nav class="header__nav">
+            <ul class="headernav__list">
+                <li class="navlist__item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="navlist__item">
+                    <a href="#aboutme">About</a>
+                </li>
+                <li class="navlist__item">
+                    <a href="#services">Services</a>
+                </li>
+                <li class="navlist__item">
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li class="navlist__item">
+                    <a href="">Tratamientos</a>
+                </li>
+                <li class="navlist__item">
+                    <a href="">Patologías</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="description">
+            <img src="logo.jpg" alt="Placeholder Image" class="header__image">
+            <div class="section__text">
+                <h1>FISIOTERAPIA MARCOS BLÁZQUEZ</h1>
+                <h2>Tu salud es nuestra prioridad</h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <section class="reveal" id="aboutme">
+        <div class="container">
+            <h1> Conóceme </h1>
+            <div class="description">
+                <img src="marcos.jpg" alt="Placeholder Image" class="header__image">
+                <div class="section__text">
+                    <h2>¡Hola! Soy Marcos Blázquez, fisioterapeuta especializado en fisioterapia manual y deportiva.
+                        Desde siempre me ha apasionado el movimiento humano y cómo ayudar a las personas a recuperar su
+                        bienestar. Mi formación en fisioterapia, junto con mi experiencia en distintas áreas como
+                        traumatología, neurología y deporte, me ha permitido desarrollar un enfoque integral para tratar
+                        y prevenir lesiones.
+                        Si buscas mejorar tu rendimiento, recuperarte de una lesión o simplemente cuidar tu cuerpo,
+                        estaré encantado de ayudarte.
+
+                    </h2>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="reveal">
+        <div class="container">
+            <h1> EXPERIENCIA PROFESIONAL </h1>
+            <div class="description">
+                <img src="naya.png" alt="Placeholder Image" class="experience__image">
+                <div class="section__text">
+                    <h2>Fisioterapeuta en AD Naya:
+                        Atención y recuperación de lesiones en jugadores del equipo.
+                    </h2>
+
+                </div>
+            </div>
+            <div class="description">
+                <img src="encadenate.png" alt="Placeholder Image" class="experience__image">
+                <div class="section__text">
+                    <h2>Fisioterapeuta en Encadénate S.L.:
+                        Rehabilitación y tratamiento de pacientes con diversas patologías musculoesqueléticas.
+                    </h2>
+
+                </div>
+            </div>
+            <div class="description">
+                <img src="triana.jpg" alt="Placeholder Image" class="experience__image">
+                <div class="section__text">
+                    <h2>Fisioterapeuta en Triana Club de Fútbol:
+                        Prevención y tratamiento de lesiones en futbolistas.
+                    </h2>
+                </div>
+            </div>
+            <div class="description">
+                <img src="domicilio.png" alt="Placeholder Image" class="experience__image">
+                <div class="section__text">
+                    <h2> Fisioterapeuta a domicilio:
+                        Sesiones personalizadas para la recuperación de pacientes en sus hogares.
+                    </h2>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <h1 id="services"> SERVICIOS </h1>
+    
+</body>
+
+</html>
